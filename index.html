@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel IoT - Oficina Git</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ÁREA 1: CABEÇALHO -->
+  <header class="topo">
+    <div class="marca">
+      <span class="marca-simbolo">IF</span>
+      <div>
+        <strong>Projeto IoT</strong>
+        <small>Oficina de Git</small>
+      </div>
+    </div>
+    <nav class="menu">
+      <a href="#inicio">Início</a>
+      <a href="#dispositivos">Dispositivos</a>
+      <a href="#sobre">Sobre</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOTSPOT 1: dois alunos podem alterar o mesmo h1 -->
+    <section class="hero" id="inicio">
+      <p class="tag">Monitoramento em tempo real</p>
+      <h1>Sistema de Monitoramento IoT</h1>
+      <p class="hero-texto">Acompanhe o estado dos dispositivos conectados ao laboratório.</p>
+      <button class="botao-principal">Atualizar dados</button>
+    </section>
+
+    <!-- ÁREA 2: RESUMO -->
+    <section class="resumo" aria-label="Resumo dos dispositivos">
+      <article class="card card-online">
+        <span class="card-valor">12</span>
+        <span class="card-rotulo">Online</span>
+      </article>
+      <article class="card card-alerta">
+        <span class="card-valor">3</span>
+        <span class="card-rotulo">Com alerta</span>
+      </article>
+      <article class="card card-offline">
+        <span class="card-valor">2</span>
+        <span class="card-rotulo">Offline</span>
+      </article>
+    </section>
+
+    <!-- HOTSPOT 2: conflito semântico possível entre HTML e CSS -->
+    <section class="secao" id="dispositivos">
+      <div class="secao-cabecalho">
+        <div>
+          <p class="tag">Laboratório</p>
+          <h2>Dispositivos cadastrados</h2>
+        </div>
+        <button class="botao-secundario">Adicionar dispositivo</button>
+      </div>
+
+      <div class="tabela-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>Dispositivo</th>
+              <th>Local</th>
+              <th>RSSI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="status status-online">Online</span></td>
+              <td>Sensor-01</td>
+              <td>Laboratório A</td>
+              <td>-48 dBm</td>
+            </tr>
+            <tr>
+              <td><span class="status status-alerta">Alerta</span></td>
+              <td>Sensor-02</td>
+              <td>Laboratório B</td>
+              <td>-76 dBm</td>
+            </tr>
+            <tr>
+              <td><span class="status status-offline">Offline</span></td>
+              <td>Sensor-03</td>
+              <td>Sala 12</td>
+              <td>--</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao sobre" id="sobre">
+      <p class="tag">Sobre o projeto</p>
+      <h2>Um projeto simples para aprender Git em equipe</h2>
+      <p>Esta página oferece regiões fáceis de editar para observar branches, merges, conflitos textuais e conflitos semânticos.</p>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <span>Oficina Git • Projeto didático</span>
+    <span>Versão 1.0</span>
+  </footer>
+</body>
+</html>

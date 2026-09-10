@@ -1,0 +1,181 @@
+:root {
+  /* HOTSPOT 3: ótimo ponto para provocar conflito em CSS */
+  --cor-principal: #2f9e41;
+  --cor-principal-escura: #247a32;
+  --cor-alerta: #cd191e;
+  --cor-aviso: #d97706;
+  --cor-fundo: #f4f6f5;
+  --cor-superficie: #ffffff;
+  --cor-texto: #1f2937;
+  --cor-texto-suave: #6b7280;
+  --cor-borda: #dfe5e1;
+  --raio: 14px;
+  --sombra: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+button, a { font: inherit; }
+
+.topo {
+  min-height: 72px;
+  padding: 0 7vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: var(--cor-superficie);
+  border-bottom: 1px solid var(--cor-borda);
+}
+.marca { display: flex; align-items: center; gap: 12px; }
+.marca-simbolo {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--cor-principal);
+  color: white;
+  font-weight: 700;
+}
+.marca strong, .marca small { display: block; }
+.marca small { color: var(--cor-texto-suave); }
+.menu { display: flex; gap: 20px; }
+.menu a { color: var(--cor-texto); text-decoration: none; }
+.menu a:hover { color: var(--cor-principal); }
+
+.hero {
+  min-height: 390px;
+  padding: 72px 7vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(47,158,65,.12), transparent 55%), var(--cor-superficie);
+}
+.tag {
+  margin: 0 0 10px;
+  color: var(--cor-principal);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .82rem;
+}
+.hero h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.05;
+}
+.hero-texto {
+  max-width: 650px;
+  margin: 18px 0 28px;
+  color: var(--cor-texto-suave);
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+.botao-principal, .botao-secundario {
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.botao-principal {
+  padding: 13px 20px;
+  border: 0;
+  background: var(--cor-principal);
+  color: white;
+}
+.botao-principal:hover { background: var(--cor-principal-escura); }
+
+.resumo {
+  width: min(1120px, 86vw);
+  margin: -46px auto 42px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.card {
+  min-height: 130px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: var(--raio);
+  background: var(--cor-superficie);
+  box-shadow: var(--sombra);
+  border-top: 5px solid var(--cor-principal);
+}
+.card-alerta { border-top-color: var(--cor-aviso); }
+.card-offline { border-top-color: var(--cor-alerta); }
+.card-valor { font-size: 2.2rem; font-weight: 800; }
+.card-rotulo { color: var(--cor-texto-suave); }
+
+.secao {
+  width: min(1120px, 86vw);
+  margin: 0 auto 52px;
+  padding: 34px;
+  background: var(--cor-superficie);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+.secao-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.secao h2 { margin: 0; font-size: 1.8rem; }
+.botao-secundario {
+  padding: 11px 16px;
+  background: transparent;
+  color: var(--cor-principal);
+  border: 1px solid var(--cor-principal);
+}
+
+.tabela-wrapper { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td {
+  padding: 15px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--cor-borda);
+}
+th { color: var(--cor-texto-suave); font-size: .9rem; }
+.status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: .82rem;
+  font-weight: 700;
+}
+.status-online { background: #e8f7eb; color: #216e30; }
+.status-alerta { background: #fff4df; color: #9a5b00; }
+.status-offline { background: #fde8e9; color: #a51217; }
+
+.sobre p:last-child {
+  max-width: 780px;
+  color: var(--cor-texto-suave);
+  line-height: 1.7;
+}
+.rodape {
+  padding: 28px 7vw;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--cor-texto-suave);
+}
+
+@media (max-width: 760px) {
+  .topo, .secao-cabecalho, .rodape {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .menu { flex-wrap: wrap; }
+  .resumo { grid-template-columns: 1fr; }
+}
