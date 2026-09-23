@@ -1,0 +1,9 @@
+git push
+git pull 
+git branch
+git commit 
+git fetch
+git merge 
+git switch
+git checkout 
+git log --oneline --graph --all
